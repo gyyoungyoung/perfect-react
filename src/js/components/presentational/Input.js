@@ -1,7 +1,15 @@
-import React from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
-const Input = ({ label, text, type, id, value, handleChange }) => (
-  <div className="form-group">
+
+class Input extends Component {
+  constructor() {
+    super();
+  }
+  render() {
+    const {label, text, type, id, value, handleChange} = this.props;
+    return (
+    <div className="form-group">
+      666
     <label htmlFor={label}>{text}</label>
     <input
       type={type}
@@ -11,8 +19,24 @@ const Input = ({ label, text, type, id, value, handleChange }) => (
       onChange={handleChange}
       required
     />
-  </div>
-);
+    </div>
+    )
+  }
+}
+
+// const Input = ({ label, text, type, id, value, handleChange }) => (
+//   <div className="form-group">
+//     <label htmlFor={label}>{text}</label>
+//     <input
+//       type={type}
+//       className="form-control"
+//       id={id}
+//       value={value}
+//       onChange={handleChange}
+//       required
+//     />
+//   </div>
+// );
 Input.propTypes = {
   label: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
